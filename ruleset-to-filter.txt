@@ -1,0 +1,190 @@
+RuleID | Rule Name | Priority | Include/Exclude | Justification
+S2095 | Resources should be closed | CRITICAL | Include | Direct resource leak impact
+S2259 | Null pointers should not be dereferenced | BLOCKER | Include | Runtime crash prevention
+S2189 | Loops should not be infinite | BLOCKER | Include | System stability
+S3649 | Database queries should not be vulnerable to injection attacks | BLOCKER | Include | Security critical
+S2277 | Cryptographic RSA algorithms should always incorporate OAEP | CRITICAL | Include | Security vulnerability
+S2278 | Neither DES nor DESede should be used | CRITICAL | Include | Security requirement
+S4423 | Weak SSL/TLS protocols should not be used | CRITICAL | Include | Security vulnerability
+S2068 | Credentials should not be hard-coded | BLOCKER | Include | Security critical
+S2699 | Tests should include assertions | CRITICAL | Include | Test reliability
+S2187 | TestCases should contain tests | CRITICAL | Include | Test effectiveness
+S2447 | Null should not be used in comparisons | MAJOR | Include | NPE prevention
+S1192 | String literals should not be duplicated | CRITICAL | Include | Maintenance impact
+S1181 | Throwable and Error should not be caught | CRITICAL | Include | Error handling
+S1134 | Track uses of "FIXME" comments | MAJOR | Include | Code quality
+S1130 | "throws" declarations should not be superfluous | MINOR | Exclude | Style 
+S2209 | "static" members should be accessed statically | MINOR | Exclude | Style preference
+S2226 | Thread.run() should not be called directly | MAJOR | Include | Threading issues
+S2275 | Printf-style format strings should be used correctly | CRITICAL | Include | Runtime errors
+S2629 | "locks" should be "released" on all paths | BLOCKER | Include | Deadlock prevention
+S2653 | Web components should be stateless | CRITICAL | Include | Server stability
+S2674 | The length returned from a stream read should be checked | CRITICAL | Include | Data integrity
+S2696 | Instance methods should not write to "static" fields | MAJOR | Include | Thread safety
+S2786 | Nested "enum"s should not be declared static | MINOR | Exclude | Code organization
+S2789 | String literals should not be duplicated | MAJOR | Include | Maintenance
+S2864 | "entrySet()" should be iterated when both key and value are needed | MAJOR | Include | Performance
+S2885 | "Calendars" and "DateFormats" should not be static | MAJOR | Include | Thread safety
+S2912 | Instance methods should not write to "static" fields | MAJOR | Include | Thread safety
+S2925 | "Thread.sleep" should not be used in tests | MAJOR | Include | Test reliability
+S2970 | Assertions should be complete | MAJOR | Include | Test quality
+S3042 | "write(byte[],int,int)" should be overridden | MAJOR | Include | IO correctness
+S3252 | String literals should not be duplicated | MINOR | Exclude | Style only
+S3374 | Synchronization on Boolean values should not be performed | MAJOR | Include | Threading issue
+S3415 | Assertion arguments should be passed in the correct order | MAJOR | Include | Test reliability
+S3436 | "secureRandom" seeds should not be predictable | CRITICAL | Include | Security critical
+S3438 | Threads should not be started in constructors | MAJOR | Include | Lifecycle issues
+S3516 | Multiple variables should not be declared on the same line | MINOR | Exclude | Readability only
+S3518 | Zero should not be passed as argument to "wait()" | MAJOR | Include | Threading issues
+S3599 | Double brace initialization should not be used | MINOR | Exclude | Style preference
+S3631 | String.valueOf() should not be appended to a String | MINOR | Include | Performance
+S3655 | Optional value should not be accessed without being present | BLOCKER | Include | Runtime crashes
+S3751 | "@RequestMapping" methods should be "public" | MAJOR | Include | Framework requirement
+S3776 | Cognitive Complexity of methods should not be too high | CRITICAL | Include | Maintainability
+S3824 | Map.get() and value test should be replaced with Map.containsKey() | MINOR | Include | Performance
+S3864 | Stream.peek() should be used with caution | MAJOR | Include | Stream processing
+S3878 | Arrays should not be created for varargs parameters | MINOR | Exclude | Style only
+S3984 | Exception should not be created without being thrown | MAJOR | Include | Logic error
+S4034 | Stream operations should use "return" or "throw" | MAJOR | Include | Stream correctness
+S4275 | Getters and setters should access the expected fields | MAJOR | Include | Logic integrity
+S4348 | String.valueOf() should not be appended to a String | MINOR | Exclude | Performance minor
+S4349 | String literals should not be duplicated | MINOR | Exclude | Already covered
+S4351 | Should use println() instead of print() | MINOR | Exclude | Style preference
+S4435 | Class names should not shadow interfaces | MAJOR | Include | Type safety
+S4488 | Composed "@RequestMapping" annotations should not be used | MINOR | Exclude | Framework style
+S4524 | Switch cases should end with "break" or "return" | CRITICAL | Include | Logic flow
+S4601 | "toString()" should never be called on a String object | MINOR | Include | Performance
+S4684 | Persistent entities should not be used as arguments | MAJOR | Include | JPA best practice
+S4719 | "StandardCharsets" constants should be preferred | MINOR | Exclude | Modern Java style
+S4823 | Using command line arguments is security-sensitive | MAJOR | Include | Security concern
+S4925 | "readme.txt" files should be reviewed | INFO | Exclude | Process only
+S4929 | "interrupt()" should not be called on current thread | MAJOR | Include | Threading issue
+S4973 | Strings and Boxed types should be compared using "equals()" | MAJOR | Include | Logic correctness
+S5122 | Having a permissive Cross-Origin Resource Sharing policy | CRITICAL | Include | Security
+S5164 | ThreadLocal variables should be properly cleared | CRITICAL | Include | Memory leaks
+S5261 | "else" statements should be clearly matched with "if" | MINOR | Exclude | Style only
+S5320 | JUnit Assert methods should be used with message parameters | MINOR | Exclude | Test style
+S5324 | Loop iterators should not be assigned to fields | MAJOR | Include | Threading issue
+S5344 | "SimpleDateFormat" should not be used | MAJOR | Include | Thread safety
+S5361 | "String.format" should only be used with message format strings | MINOR | Exclude | Style only
+S5411 | "Collection.contains" should not be used on potential streams | MINOR | Include | Performance
+S5443 | Using regular expressions is security-sensitive | MAJOR | Include | Security concern
+S5445 | Insecure temporary file creation methods should not be used | CRITICAL | Include | Security
+S5542 | Encryption algorithms should be used with secure mode and padding | CRITICAL | Include | Security
+S5547 | Cipher algorithms should be robust | CRITICAL | Include | Security
+S5669 | JWT should be signed and verified with strong cipher algorithms | CRITICAL | Include | Security
+S5679 | Cookie security flags should be set | CRITICAL | Include | Security
+S5738 | Source files should have a sufficient density of comments | MINOR | Exclude | Style preference
+S5776 | Multiple tests should not be implemented in the same method | MAJOR | Include | Test quality
+S5777 | Test assertions should include messages | MINOR | Exclude | Test style
+S5778 | Tests should not be ignored | MAJOR | Include | Test coverage
+S5779 | Assertion methods should be used | MAJOR | Include | Test quality
+S5783 | Use "assertEquals(expected, actual)" instead of "assertTrue(expected.equals(actual))" | MINOR | Exclude | Test style
+S5785 | JUnit 4 tests should not be ignored with "@Ignore" | MAJOR | Include | Test maintenance
+S5786 | "static final" arrays should be "private" | MAJOR | Include | Encapsulation
+S5790 | "assertThrows" should be used | MAJOR | Include | Test robustness
+S5803 | "Random" objects should be reused | MINOR | Include | Performance
+S5804 | Magic numbers should not be used | MINOR | Exclude | Style preference
+S5831 | Spring "@ConfigurationProperties" classes should be "static" | MAJOR | Include | Spring best practice
+S5833 | "@Autowired" fields should be "private" | MINOR | Exclude | Style preference
+S5838 | Class overrides should match their parent class | CRITICAL | Include | Inheritance correctness
+S5841 | AssertJ "assertThatThrownBy" should not be used with "isInstanceOf" | MINOR | Exclude | Test style
+S5842 | "Instant.now()" should not be used as timestamp for events | MAJOR | Include | Time precision
+S5845 | "Optional" should not be used in "if" conditions | MINOR | Exclude | Style preference
+S5846 | "Optional.get()" should not be called on optional values created with "Optional.of()" | MAJOR | Include | NPE prevention
+S5850 | "printStackTrace()" should not be called | MAJOR | Include | Logging best practice
+S5852 | Arrays should not be copied using loops | MINOR | Include | Performance
+S5853 | Consecutive AssertJ assertions should be chained | MINOR | Exclude | Test style
+S5855 | "Optional.of()" should not be used with null values | BLOCKER | Include | Runtime crashes
+S5856 | "StringBuilder" capacity should not be arbitrary | MINOR | Exclude | Performance minor
+S5857 | "MutableHttpServletRequest" should not be used | MAJOR | Include | Security concern
+S5860 | Assertions should not be used in production code | MAJOR | Include | Production quality
+S5863 | "String.replace" should be used with single characters | MINOR | Include | Performance
+S5866 | "Date" should not be used | MAJOR | Include | Modern Java practice
+S5868 | Spring "@Value" field injection should not be used | MINOR | Exclude | Framework style
+S5869 | "File.separator" should not be used in path literals | MINOR | Exclude | Style preference
+S5876 | "Session.invalidate" should be called first when creating a new session | CRITICAL | Include | Security
+S5879 | Static fields should not be used in servlet classes | MAJOR | Include | Threading safety
+S5899 | Methods returning a boolean should not return null | MAJOR | Include | API clarity
+S5900 | "StringBuilder.length()" should not be used in concatenation loops | MINOR | Include | Performance
+S5917 | "ThreadLocal.withInitial()" should be preferred | MINOR | Exclude | Modern style
+S5958 | Stream.collect(Collectors.toList()) should be simplified to Stream.toList() | MINOR | Exclude | Style only
+S5960 | Assertions should not compare an object to itself | MAJOR | Include | Test quality
+S5961 | Test methods should not contain too many assertions | MINOR | Exclude | Test style
+S5967 | Fields in a "Serializable" class should be serializable | MAJOR | Include | Serialization
+S5969 | Mocking all methods of an object is suspicious | MAJOR | Include | Test design
+S5970 | "Optional.isPresent()" should be replaced with "isEmpty()" | MINOR | Exclude | Style preference
+S5973 | String concatenation should not be used in logging calls | MINOR | Include | Performance
+S5976 | "parallelStream()" should not be used in tests | MAJOR | Include | Test reliability
+S5977 | "Stream.parallel()" should not be used in tests | MAJOR | Include | Test reliability
+S5979 | "switch" statements should have at least 3 "case" clauses | MINOR | Exclude | Style preference
+S5993 | "SuppressWarnings" should not be used on test methods | MINOR | Exclude | Test style
+S5994 | Boolean literals should not be redundant | MINOR | Exclude | Style preference
+S5996 | "RegexPatternCache" should be used | MINOR | Include | Performance
+S5998 | "Stream.collect()" calls should not be redundant | MINOR | Include | Performance
+S6000 | "charAt(0)" should not be used to check empty strings | MINOR | Include | Best practice
+S6001 | "Collection.removeAll()" should not be used | MINOR | Include | Performance
+S6002 | "Map.get()" should not be followed by "Map.containsKey()" | MINOR | Include | Performance
+S6004 | "Collection.size()" should not be compared to 0 | MINOR | Exclude | Style preference
+S6005 | "Collection.stream()" should be preferred to "Collection.parallelStream()" | MAJOR | Include | Performance
+S6019 | "null" should not be used with "Optional" | MAJOR | Include | API misuse
+S6035 | Spring framework annotations should not be used on interfaces | MAJOR | Include | Framework usage
+S6068 | Null-checks on primitives are useless | MAJOR | Include | Logic error
+S6070 | Non-null fields should not be initialized to null | MAJOR | Include | Null safety
+S6073 | Spring configuration classes should not use field injection | MINOR | Exclude | Framework style
+S6103 | "Collection.contains()" should not be used on potential streams | MINOR | Include | Performance
+S6104 | "Collection.stream().count()" should be replaced with "Collection.size()" | MINOR | Include | Performance
+S6126 | "Stream.collect()" should be simplified to "Stream.toList()" | MINOR | Exclude | Style only
+S6201 | "equals(Object obj)" should test argument type | MAJOR | Include | Contract violation
+S6202 | Mutable fields should not be "public" | MAJOR | Include | Encapsulation
+S6203 | Collection method contracts should be respected | MAJOR | Include | API correctness
+S6204 | "Collection.clear()" should be preferred to removing elements one by one | MINOR | Include | Performance
+S6205 | String literals should be placed on the left side | MINOR | Exclude | Style preference
+S6206 | Methods returning streams should not be empty | MAJOR | Include | API design
+S6207 | Redundant stream collectors should be simplified | MINOR | Exclude | Style preference
+S6208 | LocalVariables should not shadow class fields | MAJOR | Include | Code clarity
+S6209 | "Collection.removeAll()" should be used with caution | MAJOR | Include | Performance impact
+S6211 | Local variables should not shadow fields | MAJOR | Include | Code clarity
+S6212 | "Stream.collect()" calls should be simplified | MINOR | Exclude | Style preference
+S6213 | "Collection.removeIf()" should be used instead of manual iteration | MINOR | Include | Performance
+S6214 | "Stream.collect()" should be simplified when possible | MINOR | Exclude | Style preference
+S6216 | "Stream.collect()" calls should be chainable | MINOR | Exclude | Style preference
+S6217 | "Collection.stream().count()" should be replaced with "Collection.size()" | MINOR | Include | Performance
+S6218 | "Collection.stream().anyMatch()" should be replaced with "Collection.contains()" | MINOR | Include | Performance
+S6219 | "Collection.stream().noneMatch()" should be replaced with "!Collection.contains()" | MINOR | Include | Performance
+S6288 | "Collection.removeIf()" should be preferred | MINOR | Include | Performance
+S6291 | "Arrays.asList()" should not be used to create empty lists | MINOR | Include | Performance
+S6293 | "Collection.stream().filter().findFirst()" should be replaced with "Collection.stream().find()" | MINOR | Include | Performance
+S6294 | "Collection.stream().map().findFirst()" should be replaced with "Collection.stream().findFirst().map()" | MINOR | Include | Performance
+S6296 | "Collection.stream().map().collect()" should be replaced with "Collection.stream().collect(mapping())" | MINOR | Exclude | Style preference
+S6300 | "Collection.stream().collect()" calls should be replaced with "Collection.stream().toList()" | MINOR | Exclude | Style preference
+S6301 | "Optional.map().orElse(null)" should be replaced with "Optional.orElse(null)" | MINOR | Include | Performance
+S6302 | "Optional.filter().map()" should be replaced with "Optional.map().filter()" | MINOR | Include | Performance
+S6303 | "Collection.stream().filter().map()" should be replaced with "Collection.stream().map().filter()" | MINOR | Include | Performance
+S6304 | "Collection.stream().map().filter()" should be replaced with "Collection.stream().filter().map()" | MINOR | Include | Performance
+S6305 | "Spring @Autowired" annotations should be used on constructor injection | MINOR | Exclude | Framework style
+S6306 | "Collection.stream().forEach()" should be replaced with "Collection.forEach()" | MINOR | Include | Performance
+S6307 | "Optional.isPresent()" checks should not be followed by "Optional.get()" | MAJOR | Include | API misuse
+S6308 | "assertThrows" should be used | MAJOR | Include | Test robustness
+S6309 | "Tests" should include assertions | MAJOR | Include | Test quality
+S6310 | "Collection.stream().collect()" calls should be simplified | MINOR | Exclude | Style preference
+S6311 | "Spring @Value" annotations should be used on constructor parameters | MINOR | Exclude | Framework style
+S6312 | "Spring @Autowired" fields should be made final | MINOR | Exclude | Framework style
+S6313 | "Spring @Value" fields should be made final | MINOR | Exclude | Framework style
+S6314 | "Spring @Scheduled" methods should be void and parameterless | MAJOR | Include | Framework requirement
+S6315 | "Spring @Async" methods should have void or Future return type | MAJOR | Include | Framework requirement
+S6316 | "Spring @Transactional" should not be used on private methods | MAJOR | Include | Framework requirement
+S6317 | "Spring @Transactional" should specify readOnly attribute | MINOR | Exclude | Framework style
+S6318 | "Spring @Transactional" should not be used on methods that don't access the database | MAJOR | Include | Framework misuse
+S6319 | "JPA @Version" fields should be private | MINOR | Exclude | Framework style
+S6320 | "JPA @Id" fields should be private | MINOR | Exclude | Framework style
+S6321 | "JPA @Column" should specify name attribute | MINOR | Exclude | Framework style
+S6322 | "JPA @Table" should specify name attribute | MINOR | Exclude | Framework style
+S6323 | "JPA @Entity" should specify name attribute | MINOR | Exclude | Framework style
+S6324 | "JPA @OneToMany" and "@ManyToMany" should set fetch type to LAZY | MAJOR | Include | Performance
+S6325 | "JPA @OneToOne" and "@ManyToOne" should set optional attribute | MAJOR | Include | Data integrity
+S6326 | "JPA @ElementCollection" should set fetch type to LAZY | MAJOR | Include | Performance
+S6327 | "JPA @Basic" should set fetch type to LAZY for large objects | MAJOR | Include | Performance
+S6328 | "JPA @Version" should be used on entities | MAJOR | Include | Concurrency
+S6329 | "JPA @Id" should be used on entities | BLOCKER | Include | Data integrity
+S6330 | "JPA @GeneratedValue" should be used with @Id | MAJOR | Include | Data integrity
