@@ -1,0 +1,662 @@
+// Default SonarQube Java Rules - Sonar way profile
+// Active rules: 513
+// Source: Default SonarQube installation with Java plugin
+//
+// Quality Breakdown:
+// - Security: 29 active rules
+// - Reliability: 161 active rules
+// - Maintainability: 294 active rules
+//
+// Clean Code Categories:
+// - Consistency: 79 active rules
+// - Intentionality: 348 active rules
+// - Adaptability: 36 active rules
+// - Responsibility: 14 active rules
+
+// Default SonarQube Java Rules (541)
+// Source: https://rules.sonarsource.com/java/
+
+// Bugs (138)
+Bug | "@NonNull" values should not be set to null
+Bug | "@PathVariable" annotation should be present if a path variable is used
+Bug | "@Qualifier" should not be used on "@Bean" methods
+Bug | "@SpringBootApplication" and "@ComponentScan" should not be used in the default package
+Bug | "BigDecimal(double)" should not be used
+Bug | "Collection.toArray()" should be passed an array of the proper type
+Bug | "Double.longBitsToDouble" should take "long" as argument
+Bug | "Externalizable" classes should have no-arguments constructors
+Bug | "InterruptedException" and "ThreadDeath" should not be ignored
+Bug | "Iterator.hasNext()" should not call "Iterator.next()"
+Bug | "Iterator.next()" methods should throw "NoSuchElementException"
+Bug | "Math.abs" and negation should not be used on numbers that could be "MIN_VALUE"
+Bug | "Math.clamp" should be used with correct ranges
+Bug | "Object.wait()", "Object.notify()" and "Object.notifyAll()" should only be called from synchronized code
+Bug | "PreparedStatement" and "ResultSet" methods should be called with valid indices
+Bug | "Random" objects should be reused
+Bug | "ScheduledThreadPoolExecutor" should not have 0 core threads
+Bug | "Serializable" inner classes of non-serializable outer classes should be "static"
+Bug | "String.indexOf" should be used with correct ranges
+Bug | "StringBuilder" and "StringBuffer" should not be instantiated with a character
+Bug | "Thread.run()" should not be called directly
+Bug | "ThreadLocal" variables should be cleaned up when no longer used
+Bug | "compareTo" results should not be checked for specific values
+Bug | "compareTo" should not be overloaded
+Bug | "compareTo" should not return "Integer.MIN_VALUE"
+Bug | "equals" method overrides should accept "Object" parameters
+Bug | "equals" methods should be symmetric and work for subclasses
+Bug | "equals(Object obj)" and "hashCode()" should be overridden in pairs
+Bug | "equals(Object obj)" should test the argument's type
+Bug | "getClass" should not be used for synchronization
+Bug | "hashCode" and "toString" should not be called on array instances
+Bug | "iterator" should not return "this"
+Bug | "notifyAll()" should be preferred over "notify()"
+Bug | "null" should not be used with "Optional"
+Bug | "read" and "readLine" return values should be used
+Bug | "runFinalizersOnExit" should not be called
+Bug | "setDaemon", "setPriority" and "getThreadGroup" should not be invoked on virtual threads
+Bug | "super.finalize()" should be called at the end of "Object.finalize()" implementations
+Bug | "toString()" and "clone()" methods should not return null
+Bug | "volatile" variables should not be used with compound operators
+Bug | "wait" should not be called when multiple locks are held
+Bug | "wait(...)" should be used instead of "Thread.sleep(...)" when a lock is held
+Bug | "writeObject" argument must implement "Serializable"
+Bug | A "for" loop update clause should move the counter in the right direction
+Bug | Accessing an array element should not trigger an ArrayIndexOutOfBoundsException
+Bug | All branches in a conditional structure should not have exactly the same implementation
+Bug | Alternatives in regular expressions should be grouped when used with anchors
+Bug | Annotated Mockito objects should be initialized
+Bug | AssertJ assertions "allMatch" and "doesNotContains" should also test for emptiness
+Bug | AssertJ assertions with "Consumer" arguments should contain assertion inside consumers
+Bug | AssertJ configuration should be applied
+Bug | AssertJ methods setting the assertion context should come before an assertion
+Bug | Assertion methods should not be used within the try block of a try-catch catching an Error
+Bug | Assertions comparing incompatible types should not be made
+Bug | Assertions should not be used in production code
+Bug | Assertions should not compare an object to itself
+Bug | Assignment of lazy-initialized members should be the last step with double-checked locking
+Bug | Async methods should return void or Future
+Bug | Back references in regular expressions should only refer to capturing groups that are matched before the reference
+Bug | Beans in "@Configuration" class should have different names
+Bug | Blocks should be synchronized on "private final" fields
+Bug | Calls to methods should not trigger an exception
+Bug | Case insensitive Unicode regular expressions should enable the "UNICODE_CASE" flag
+Bug | Cast operations should not trigger a ClassCastException
+Bug | Child class methods named for parent class methods should be overrides
+Bug | Classes extending java.lang.Thread should provide a specific "run" behavior
+Bug | Classes should not access their own subclasses during class initialization
+Bug | Classes should not be compared by name
+Bug | Classes that don't define "hashCode()" should not be used in hashes
+Bug | Collection sizes and array length comparisons should make sense
+Bug | Collections should not be modified while they are iterated
+Bug | Collections should not be passed as arguments to their own methods
+Bug | Conditionally executed code should be reachable
+Bug | Constructor injection should be used instead of field injection
+Bug | Consumed Stream pipelines should not be reused
+Bug | Custom resources should be closed
+Bug | Custom serialization methods should have required signatures
+Bug | DateTimeFormatters should not use mismatched year and week numbers
+Bug | Dissimilar primitive wrappers should not be used with the ternary operator without explicit casting
+Bug | Double Brace Initialization should not be used
+Bug | Double-checked locking should not be used
+Bug | Equals method should be overridden in records containing array fields
+Bug | Exceptions should not be created without being thrown
+Bug | Expressions used in "assert" should not produce side effects
+Bug | Files opened in append mode should not be used with "ObjectOutputStream"
+Bug | Floating point numbers should not be tested for equality
+Bug | Getters and setters should access the expected fields
+Bug | Getters and setters should be synchronized in pairs
+Bug | Identical expressions should not be used on both sides of a binary operator
+Bug | Inappropriate "Collection" calls should not be made
+Bug | Inappropriate regular expressions should not be used
+Bug | Indexes to passed to "String" operations should be within the string's bounds
+Bug | InputSteam.read() implementation should not return a signed byte
+Bug | Intermediate Stream methods should not be left unused
+Bug | Ints and longs should not be shifted by zero or more than their number of bits-1
+Bug | Invalid "Date" values should not be used
+Bug | JEE applications should not "getClassLoader"
+Bug | JUnit5 inner test classes should be annotated with @Nested
+Bug | JUnit5 test classes and methods should not be silently ignored
+Bug | Jump statements should not occur in "finally" blocks
+Bug | Locks should be released on all paths
+Bug | Loop conditions should be true at least once
+Bug | Loops should not be infinite
+Bug | Loops with at most one iteration should be refactored
+Bug | Map "computeIfAbsent()" and "computeIfPresent()" should not be used to add "null" values.
+Bug | Map values should not be replaced unconditionally
+Bug | Math operands should be cast before assignment
+Bug | Math should not be performed on floats
+
+// Security Hotspots (36)
+Security Hotspot | Accessing Android external storage is security-sensitive
+Security Hotspot | Allowing both safe and unsafe HTTP methods is security-sensitive
+Security Hotspot | Allowing deserialization of LDAP objects is security-sensitive
+Security Hotspot | Allowing requests with excessive content length is security-sensitive
+Security Hotspot | Allowing user enumeration is security-sensitive
+Security Hotspot | Authorizing non-authenticated users to use keys in the Android KeyStore is security-sensitive
+Security Hotspot | Broadcasting intents is security-sensitive
+Security Hotspot | Configuring loggers is security-sensitive
+Security Hotspot | Constructing arguments of system commands from user input is security-sensitive
+Security Hotspot | Creating cookies without the "HttpOnly" flag is security-sensitive
+Security Hotspot | Creating cookies without the "secure" flag is security-sensitive
+Security Hotspot | Delivering code in production with debug features activated is security-sensitive
+Security Hotspot | Disabling CSRF protections is security-sensitive
+Security Hotspot | Disabling auto-escaping in template engines is security-sensitive
+Security Hotspot | Disclosing fingerprints from web application technologies is security-sensitive
+Security Hotspot | Enabling JavaScript support for WebViews is security-sensitive
+Security Hotspot | Enabling file access for WebViews is security-sensitive
+Security Hotspot | Expanding archive files without controlling resource consumption is security-sensitive
+Security Hotspot | Formatting SQL queries is security-sensitive
+Security Hotspot | Hard-coded passwords are security-sensitive
+Security Hotspot | Hard-coded secrets are security-sensitive
+Security Hotspot | Having a permissive Cross-Origin Resource Sharing policy is security-sensitive
+Security Hotspot | Receiving intents is security-sensitive
+Security Hotspot | Searching OS commands in PATH is security-sensitive
+Security Hotspot | Setting JavaBean properties is security-sensitive
+Security Hotspot | Setting loose POSIX file permissions is security-sensitive
+Security Hotspot | Using biometric authentication without a cryptographic solution is security-sensitive
+Security Hotspot | Using clear-text protocols is security-sensitive
+Security Hotspot | Using hardcoded IP addresses is security-sensitive
+Security Hotspot | Using long-term access keys is security-sensitive
+Security Hotspot | Using non-standard cryptographic algorithms is security-sensitive
+Security Hotspot | Using pseudorandom number generators (PRNGs) is security-sensitive
+Security Hotspot | Using publicly writable directories is security-sensitive
+Security Hotspot | Using slow regular expressions is security-sensitive
+Security Hotspot | Using unencrypted databases in mobile applications is security-sensitive
+Security Hotspot | Using unencrypted files in mobile applications is security-sensitive
+
+// Vulnerabilities (63)
+Vulnerability | "ActiveMQConnectionFactory" should not be vulnerable to malicious code deserialization
+Vulnerability | "HttpSecurity" URL patterns should be correctly ordered
+Vulnerability | "HttpServletRequest.getRequestedSessionId()" should not be used
+Vulnerability | A new session should be created during user authentication
+Vulnerability | A secure password should be used when connecting to a database
+Vulnerability | Accessing files should not lead to filesystem oracle attacks
+Vulnerability | Applications should not create session cookies from untrusted input
+Vulnerability | Authorizations should be based on strong decisions
+Vulnerability | Basic authentication should not be used
+Vulnerability | Cipher Block Chaining IVs should be unpredictable
+Vulnerability | Cipher algorithms should be robust
+Vulnerability | Classes should not be loaded dynamically
+Vulnerability | Components should not be vulnerable to intent redirection
+Vulnerability | Counter Mode initialization vectors should not be reused
+Vulnerability | Credentials should not be hard-coded
+Vulnerability | Cryptographic keys should be robust
+Vulnerability | Database queries should not be vulnerable to injection attacks
+Vulnerability | Deserialization should not be vulnerable to injection attacks
+Vulnerability | Dynamic code execution should not be vulnerable to injection attacks
+Vulnerability | Encryption algorithms should be used with secure mode and padding scheme
+Vulnerability | Endpoints should not be vulnerable to reflected cross-site scripting (XSS) attacks
+Vulnerability | Environment variables should not be defined from untrusted input
+Vulnerability | Exceptions should not be thrown from servlet methods
+Vulnerability | Extracting archives should not lead to zip slip vulnerabilities
+Vulnerability | HTTP request redirections should not be open to forging attacks
+Vulnerability | I/O function calls should not be vulnerable to path injection attacks
+Vulnerability | Insecure temporary file creation methods should not be used
+Vulnerability | JSON operations should not be vulnerable to injection attacks
+Vulnerability | JWT should be signed and verified with strong cipher algorithms
+Vulnerability | LDAP connections should be authenticated
+Vulnerability | LDAP queries should not be vulnerable to injection attacks
+Vulnerability | Logging should not be vulnerable to injection attacks
+Vulnerability | Mobile database encryption keys should not be disclosed
+Vulnerability | NoSQL operations should not be vulnerable to injection attacks
+Vulnerability | OS commands should not be vulnerable to argument injection attacks
+Vulnerability | OS commands should not be vulnerable to command injection attacks
+Vulnerability | OpenSAML2 should be configured to prevent authentication bypass
+Vulnerability | Password hashing functions should use an unpredictable salt
+Vulnerability | Passwords should not be stored in plaintext or with a fast hashing algorithm
+Vulnerability | Persistent entities should not be used as arguments of "@RequestMapping" methods
+Vulnerability | Reflection should not be vulnerable to injection attacks
+Vulnerability | Regular expressions should not be vulnerable to Denial of Service attacks
+Vulnerability | Secure random number generators should not output predictable values
+Vulnerability | Server certificates should be verified during SSL/TLS connections
+Vulnerability | Server hostnames should be verified during SSL/TLS connections
+Vulnerability | Server-side requests should not be vulnerable to forging attacks
+Vulnerability | Server-side requests should not be vulnerable to traversing attacks
+Vulnerability | Server-side templates should not be vulnerable to injection attacks
+Vulnerability | Thread suspensions should not be vulnerable to Denial of Service attacks
+Vulnerability | Weak SSL/TLS protocols should not be used
+Vulnerability | XML operations should not be vulnerable to injection attacks
+Vulnerability | XML parsers should not allow inclusion of arbitrary files
+Vulnerability | XML parsers should not be vulnerable to Denial of Service attacks
+Vulnerability | XML parsers should not be vulnerable to XXE attacks
+Vulnerability | XML parsers should not load external schemas
+Vulnerability | XML signatures should be validated securely
+Vulnerability | XPath expressions should not be vulnerable to injection attacks
+
+// Code Smells (304) - Only including core default rules
+Code Smell | "==" and "!=" should not be used when "equals" is overridden
+Code Smell | "@Autowired" should be used when multiple constructors are provided
+Code Smell | "@CheckForNull" or "@Nullable" should not be used on primitive types
+Code Smell | "@Controller" should be replaced with "@RestController"
+Code Smell | "@Deprecated" code marked for removal should never be used
+Code Smell | "@Deprecated" code should not be used
+Code Smell | "@EnableAutoConfiguration" should be fine-tuned
+Code Smell | "@Override" should be used on overriding and implementing methods
+Code Smell | "@RequestMapping" methods should not be "private"
+Code Smell | "@Value" annotation should inject property or SpEL expression
+Code Smell | "Arrays.stream" should be used for primitive arrays
+Code Smell | "Bean Validation" (JSR 380) should be properly configured
+Code Smell | "Class.forName()" should not load JDBC 4.0+ drivers
+Code Smell | "Cloneables" should implement "clone"
+Code Smell | "Collection.isEmpty()" should be used to test for emptiness
+Code Smell | "Collections.EMPTY_LIST", "EMPTY_MAP", and "EMPTY_SET" should not be used
+Code Smell | "DateUtils.truncate" from Apache Commons Lang library should not be used
+Code Smell | "Enumeration" should not be implemented
+Code Smell | "Exception" should not be caught when not required by called methods
+Code Smell | "IllegalMonitorStateException" should not be caught
+Code Smell | "Integer.toHexString" should not be used to build hexadecimal strings
+Code Smell | "Map.get" and value test should be replaced with single method call
+Code Smell | "NullPointerException" should not be caught
+Code Smell | "NullPointerException" should not be explicitly thrown
+Code Smell | "Object.finalize()" should remain protected (versus public) when overriding
+Code Smell | "Object.wait" should not be called on objects that implement "java.util.concurrent.locks.Condition"
+Code Smell | "Object.wait(...)" and "Condition.await(...)" should be called inside a "while" loop
+Code Smell | "Optional" should not be used for parameters
+Code Smell | "Preconditions" and logging arguments should not require evaluation
+Code Smell | "ResultSet.isLast()" should not be used
+Code Smell | "Serializable" classes should have a "serialVersionUID"
+Code Smell | "Serializable" inner classes of "Serializable" classes should be static
+Code Smell | "StandardCharsets" constants should be preferred
+Code Smell | "Stream" call chains should be simplified when possible
+Code Smell | "Stream.collect()" calls should not be redundant
+Code Smell | "Stream.peek" should be used with caution
+Code Smell | "Stream.toList()" method should be used instead of "collectors" when unmodifiable list needed
+Code Smell | "String#replace" should be preferred to "String#replaceAll"
+Code Smell | "String.isEmpty()" should be used to test for emptiness
+Code Smell | "String.valueOf()" should not be appended to a "String"
+Code Smell | "Thread" should not be used where a "Runnable" argument is expected
+Code Smell | "Thread.sleep" should not be used in tests
+Code Smell | "ThreadGroup" should not be used
+Code Smell | "ThreadLocal.withInitial" should be preferred
+Code Smell | "URL.hashCode" and "URL.equals" should be avoided
+Code Smell | "catch" clauses should do more than rethrow
+Code Smell | "clone" should not be overridden
+Code Smell | "close()" calls should not be redundant
+Code Smell | "collect" should be used with "Streams" instead of "list::add"
+Code Smell | "default" clauses should be last
+Code Smell | "deleteOnExit" should not be used
+Code Smell | "else" statements should be clearly matched with an "if"
+Code Smell | "entrySet()" should be iterated when both the key and value are needed
+Code Smell | "enum" fields should not be publicly mutable
+Code Smell | "equals" method parameters should not be marked "@Nonnull"
+Code Smell | "equals(Object obj)" should be overridden along with the "compareTo(T obj)" method
+Code Smell | "final" classes should not have "protected" members
+Code Smell | "finalize" should not set fields to "null"
+Code Smell | "for" loop increment clauses should modify the loops' counters
+Code Smell | "for" loop stop conditions should be invariant
+Code Smell | "if ... else if" constructs should end with "else" clauses
+Code Smell | "indexOf" checks should not be for positive numbers
+Code Smell | "java.lang.Error" should not be extended
+Code Smell | "java.nio.Files#delete" should be preferred
+Code Smell | "java.time" classes should be used for dates and times
+Code Smell | "main" should not "throw" anything
+Code Smell | "null" should not be returned from a "Boolean" method
+Code Smell | "private" and "final" methods that don't access instance data should be "static"
+Code Smell | "private" methods called only by inner classes should be moved to those classes
+Code Smell | "public static" fields should be constant
+Code Smell | "read(byte[],int,int)" should be overridden
+Code Smell | "readObject" should not be "synchronized"
+Code Smell | "readResolve" methods should be inheritable
+Code Smell | "serialVersionUID" should not be declared blindly
+Code Smell | "static" base class members should not be accessed via derived types
+Code Smell | "static" members should be accessed statically
+Code Smell | "switch case" clauses should not have too many lines of code
+Code Smell | "switch" statements and expressions should not be nested
+Code Smell | "switch" statements should have "default" clauses
+Code Smell | "switch" statements should have at least 3 "case" clauses
+Code Smell | "switch" statements should not contain non-case labels
+Code Smell | "switch" statements should not have too many "case" clauses
+Code Smell | "this" should not be exposed from constructors
+Code Smell | "toString()" should never be called on a String object
+Code Smell | "write(byte[],int,int)" should be overridden
+Code Smell | "writeObject" should not be the only "synchronized" code in a class
+Code Smell | 'List.remove()' should not be used in ascending 'for' loops
+Code Smell | 'serialVersionUID' field should not be set to '0L' in records
+Code Smell | A "while" loop should be used instead of a "for" loop
+Code Smell | A close curly brace should be located at the beginning of a line
+Code Smell | A conditionally executed single line should be denoted by indentation
+Code Smell | A field should not duplicate the name of its containing class
+Code Smell | AWS region should not be set with a hardcoded String
+Code Smell | Abstract class names should comply with a naming convention
+Code Smell | Abstract classes without fields should be converted to interfaces
+Code Smell | Abstract methods should not be redundant
+Code Smell | An abstract class should have both abstract and concrete methods
+Code Smell | An iteration on a Collection should be performed on the type handled by the Collection
+Code Smell | An open curly brace should be located at the beginning of a line
+Code Smell | An open curly brace should be located at the end of a line
+Code Smell | Annotation repetitions should not be wrapped
+Code Smell | Anonymous classes should not have too many lines
+Code Smell | Anonymous inner classes containing only one method should become lambdas
+Code Smell | Array designators "[]" should be located after the type in method signatures
+Code Smell | Array designators "[]" should be on the type, not the variable
+Code Smell | Arrays and lists should not be copied using loops
+Code Smell | Arrays should not be created for varargs parameters
+Code Smell | AssertJ "assertThatThrownBy" should not be used alone
+Code Smell | Assertion arguments should be passed in the correct order
+Code Smell | Assertions should be complete
+Code Smell | Asserts should not be used to check the parameters of a public method
+Code Smell | Assignments should not be made from within sub-expressions
+Code Smell | Assignments should not be redundant
+Code Smell | Avoid using "FetchType.EAGER"
+Code Smell | Avoid using boxed "Boolean" types directly in boolean expressions
+Code Smell | Bean names should adhere to the naming conventions
+Code Smell | Bluetooth should be configured to use low power
+Code Smell | Boolean checks should not be inverted
+Code Smell | Boolean expressions should not be gratuitous
+Code Smell | Boolean literals should not be redundant
+Code Smell | Call to Mockito method "verify", "when" or "given" should be simplified
+Code Smell | Case insensitive string comparisons should be made without intermediate upper or lower casing
+Code Smell | Catches should be combined
+Code Smell | Chained AssertJ assertions should be simplified to the corresponding dedicated assertion
+Code Smell | Character classes in regular expressions should not contain only one character
+Code Smell | Character classes in regular expressions should not contain the same character twice
+Code Smell | Character classes should be preferred over reluctant quantifiers in regular expressions
+Code Smell | Checked exceptions should not be thrown
+Code Smell | Child class fields should not shadow parent class fields
+Code Smell | Circular dependencies between classes across packages should be resolved
+Code Smell | Circular dependencies between classes in the same package should be resolved
+Code Smell | Class members annotated with "@VisibleForTesting" should not be accessed from production code
+Code Smell | Class names should comply with a naming convention
+Code Smell | Class names should not shadow interfaces or superclasses
+Code Smell | Class variable fields should not have public accessibility
+Code Smell | Classes and enums with private members should have a constructor
+Code Smell | Classes and methods that rely on the default system encoding should not be used
+Code Smell | Classes from "sun.*" packages should not be used
+Code Smell | Classes named like "Exception" should extend "Exception" or a subclass
+Code Smell | Classes should not be coupled to too many other classes
+Code Smell | Classes should not be empty
+Code Smell | Classes should not depend on an excessive number of classes (aka Monster Class)
+Code Smell | Classes should not have too many "static" imports
+Code Smell | Classes should not have too many fields
+Code Smell | Classes should not have too many methods
+Code Smell | Classes that override "clone" should be "Cloneable" and call "super.clone()"
+Code Smell | Classes with only "static" methods should not be instantiated
+Code Smell | Classes without "public" constructors should be "final"
+Code Smell | Close curly brace and the next "else", "catch" and "finally" keywords should be located on the same line
+Code Smell | Close curly brace and the next "else", "catch" and "finally" keywords should be on two different lines
+Code Smell | Cognitive Complexity of methods should not be too high
+Code Smell | Collection constructors should not be used as java.util.function.Function
+Code Smell | Collection methods with O(n) performance should be used carefully
+Code Smell | Comma-separated labels should be used in Switch with colon case
+Code Smell | Comments should not be located at the end of lines of code
+Code Smell | Comparators should be "Serializable"
+Code Smell | Composed "@RequestMapping" variants should be preferred
+Code Smell | Conditionals should start on new lines
+Code Smell | Consecutive AssertJ "assertThat" statements should be chained
+Code Smell | Constant names should comply with a naming convention
+Code Smell | Constant parameters in a "PreparedStatement" should not be set more than once
+Code Smell | Constructors of an "abstract" class should not be declared "public"
+Code Smell | Constructors should not be used to instantiate "String", "BigInteger", "BigDecimal" and primitive-wrapper classes
+Code Smell | Constructors should only call non-overridable methods
+Code Smell | Consumer Builders should be used
+Code Smell | Control flow statements "if", "for", "while", "switch" and "try" should not be nested too deeply
+Code Smell | Control structures should use curly braces
+Code Smell | Credentials Provider should be set explicitly when creating a new "AwsClient"
+Code Smell | Custom getter method should not be used to override record's getter behavior
+Code Smell | Declarations should use Java collection interfaces such as "List" rather than specific implementation classes such as "LinkedList"
+Code Smell | Default annotation parameter values should not be passed as arguments
+Code Smell | Deprecated annotations should include explanations
+Code Smell | Deprecated code should be removed
+Code Smell | Deprecated elements should have both the annotation and the Javadoc tag
+Code Smell | Derived exceptions should not hide their parents' catch blocks
+Code Smell | Do not perform unnecessary mathematical operations
+Code Smell | Empty arrays and collections should be returned instead of null
+Code Smell | Empty lines should not be tested with regex MULTILINE flag
+Code Smell | Empty statements should be removed
+Code Smell | Enum values should be compared with "=="
+Code Smell | Equality operators should not be used in "for" loop termination conditions
+Code Smell | Escape sequences should not be used in text blocks
+Code Smell | Escaped Unicode characters should not be used
+Code Smell | Exact alarms should not be abused
+Code Smell | Exception classes should have final fields
+Code Smell | Exception handlers should preserve the original exceptions
+Code Smell | Exception testing via JUnit @Test annotation should be avoided
+Code Smell | Exception testing via JUnit ExpectedException rule should not be mixed with other assertions
+Code Smell | Exception types should not be tested using "instanceof" in catch blocks
+Code Smell | Exceptions in "throws" clauses should not be superfluous
+Code Smell | Exceptions should be either logged or rethrown but not both
+Code Smell | Exceptions should not be thrown in finally blocks
+Code Smell | Execution of the Garbage Collector should be triggered only by the JVM
+Code Smell | Exit methods should not be called
+Code Smell | Expressions should not be too complex
+Code Smell | Extensions and implementations should not be redundant
+Code Smell | Factory method injection should be used in "@Configuration" classes
+Code Smell | Field dependency injection should be avoided
+Code Smell | Field names should comply with a naming convention
+Code Smell | Fields in a "Serializable" class should either be transient or serializable
+Code Smell | Fields in non-serializable classes should not be "transient"
+Code Smell | Fields should not be initialized to default values
+Code Smell | Files should contain only one top-level class or interface each
+Code Smell | Files should end with a newline
+Code Smell | Files should not be empty
+Code Smell | Files should not have too many lines of code
+Code Smell | Format strings should be used correctly
+Code Smell | Functional Interfaces should be as specialised as possible
+Code Smell | Functions should not be defined with a variable number of arguments
+Code Smell | Future keywords should not be used as names
+Code Smell | Generic exceptions should never be thrown
+Code Smell | Generic wildcard types should not be used in return types
+Code Smell | Hash-based collections with known capacity should be initialized with the proper related static method.
+Code Smell | High frame rates should not be used
+Code Smell | Increment (++) and decrement (--) operators should not be used in a method call or mixed with other operators in an expression
+Code Smell | Inheritance tree of classes should not be too deep
+Code Smell | Inner class calls to super class methods should be unambiguous
+Code Smell | Inner classes should not have too many lines of code
+Code Smell | Inner classes which do not reference their owning classes should be "static"
+Code Smell | Instance methods should not write to "static" fields
+Code Smell | Interface names should comply with a naming convention
+Code Smell | Interfaces should not solely consist of constants
+Code Smell | JUnit assertTrue/assertFalse should be simplified to the corresponding dedicated assertion
+Code Smell | JUnit assertions should not be used in "run" methods
+Code Smell | JUnit rules should be used
+Code Smell | JUnit test cases should call super methods
+Code Smell | JUnit4 @Ignored and JUnit5 @Disabled annotations should be used to disable tests and should provide a rationale
+Code Smell | JUnit5 test classes and methods should have default package visibility
+Code Smell | Java 8's "Files.exists" should not be used
+Code Smell | Java features should be preferred to Guava
+Code Smell | Java parser failure
+Code Smell | Jump statements should not be redundant
+Code Smell | Labels should not be used
+Code Smell | Lambdas containing only one statement should not nest this statement in a block
+Code Smell | Lambdas should be replaced with method references
+Code Smell | Lambdas should not have too many lines
+Code Smell | Lambdas should not invoke other lambdas synchronously
+Code Smell | Lazy initialization of "static" fields should be "synchronized"
+Code Smell | Limited dependence should be placed on operator precedence
+Code Smell | Lines should not be too long
+Code Smell | Literal boolean values and nulls should not be used in assertions
+Code Smell | Literal suffixes should be upper case
+Code Smell | Local constants should follow naming conventions for constants
+Code Smell | Local variable and method parameter names should comply with a naming convention
+Code Smell | Local variables should not be declared and then immediately returned or thrown
+Code Smell | Local variables should not shadow class fields
+Code Smell | Local-Variable Type Inference should be used
+Code Smell | Loggers should be "private static final" and should share a naming convention
+Code Smell | Loggers should be named for their enclosing classes
+Code Smell | Loops should not contain more than a single "break" or "continue" statement
+Code Smell | Magic numbers should not be used
+Code Smell | Maps with keys that are enum values should use the EnumMap implementation
+Code Smell | Member variable visibility should be specified
+Code Smell | Members of Spring components should be injected
+Code Smell | Mergeable "if" statements should be combined
+Code Smell | Method names should comply with a naming convention
+Code Smell | Method overrides should not change contracts
+Code Smell | Method parameters should be declared with base types
+Code Smell | Methods and field names should not be the same or differ only by capitalization
+Code Smell | Methods of "Random" that return floating point values should not be used in random integer generation
+Code Smell | Methods returns should not be invariant
+Code Smell | Methods setUp() and tearDown() should be correctly annotated starting with JUnit4
+Code Smell | Methods should not be empty
+Code Smell | Methods should not be too complex
+Code Smell | Methods should not have identical implementations
+Code Smell | Methods should not have too many lines
+Code Smell | Methods should not have too many parameters
+Code Smell | Methods should not have too many return statements
+Code Smell | Methods should not perform too many tasks (aka Brain method)
+Code Smell | Methods should not return constants
+Code Smell | Methods with Spring proxy should not be called via "this"
+Code Smell | Migrate your tests from JUnit4 to the new JUnit5 annotations
+Code Smell | Mocking all non-private methods of a class should be avoided
+Code Smell | Modifiers should be declared in the correct order
+Code Smell | Modulus results should not be checked for direct equality
+Code Smell | Motion Sensor should not use gyroscope
+Code Smell | Multiline blocks should be enclosed in curly braces
+Code Smell | Multiple loops over the same set should be combined
+Code Smell | Multiple variables should not be declared on the same line
+Code Smell | Mutable fields should not be "public static"
+Code Smell | Names of regular expressions named groups should be used
+Code Smell | Nested "enum"s should not be declared static
+Code Smell | Nested blocks of code should not be left empty
+Code Smell | Nested code blocks should not be used
+Code Smell | Non-capturing groups without quantifier should not be used
+Code Smell | Non-constructor methods should not have the same name as the enclosing class
+Code Smell | Non-singleton Spring beans should not be injected into singleton beans
+Code Smell | Null checks should not be used with "instanceof"
+Code Smell | Nullness of parameters should be guaranteed
+Code Smell | Number patterns should be regular
+Code Smell | Objects should not be created only to invoke "getClass"
+Code Smell | Octal values should not be used
+Code Smell | Only one method invocation is expected when testing runtime exceptions
+Code Smell | Only static class initializers should be used
+Code Smell | Operator "instanceof" should be used instead of "A.class.isInstance()"
+Code Smell | Optional REST parameters should have an object type
+Code Smell | Overriding methods should do more than simply call the same method in the super class
+Code Smell | Package declaration should match source file directory
+Code Smell | Package names should comply with a naming convention
+Code Smell | Packages containing only "package-info.java" should be removed
+Code Smell | Packages should have a javadoc file 'package-info.java'
+Code Smell | Parameters should be passed in the correct order
+Code Smell | Parentheses should be removed from a single lambda parameter when its type is inferred
+Code Smell | Parsing should be used to convert "Strings" to primitives
+Code Smell | Pattern Matching for "instanceof" operator should be used instead of simple "instanceof" + cast
+Code Smell | Permitted types of a sealed class should be omitted if they are declared in the same file
+Code Smell | Primitive wrappers should not be instantiated only for "toString" or "compareTo" calls
+Code Smell | Primitives should not be boxed just for "String" conversion
+Code Smell | Private fields only used as local variables in methods should become local variables
+Code Smell | Private mutable members should not be stored or returned directly
+Code Smell | Proper Sensor Resource Management
+Code Smell | Public constants and fields initialized at declaration should be "static final" rather than merely "final"
+Code Smell | Public methods should not contain selector arguments
+Code Smell | Public methods should throw at most one checked exception
+Code Smell | Public types, methods and fields (API) should be documented with Javadoc
+Code Smell | Raw types should not be used
+Code Smell | Records should be used instead of ordinary classes when representing immutable data structure
+Code Smell | Redundant casts should not be used
+Code Smell | Redundant constructors/methods should be avoided in records
+Code Smell | Redundant modifiers should not be used
+Code Smell | Redundant nullability annotations should be removed
+Code Smell | Redundant pairs of parentheses should be removed
+Code Smell | Reflection should not be used to increase accessibility of classes, methods, or fields
+Code Smell | Regex patterns should not be created needlessly
+Code Smell | Regexes containing characters subject to normalization should use the CANON_EQ flag
+Code Smell | Region should be set explicitly when creating a new "AwsClient"
+Code Smell | Regular expression quantifiers and character classes should be used concisely
+Code Smell | Regular expressions should not be too complicated
+Code Smell | Regular expressions should not contain empty groups
+Code Smell | Regular expressions should not contain multiple spaces
+Code Smell | Reluctant quantifiers in regular expressions should be followed by an expression that can't match the empty string
+Code Smell | Restricted Identifiers should not be used as Identifiers
+Code Smell | Return of boolean expressions should not be wrapped into an "if-then-else" statement
+Code Smell | Reusable resources should be initialized at construction time of Lambda functions
+Code Smell | Reverse iteration should utilize reversed view
+Code Smell | Reverse view should be used instead of reverse copy in read-only cases
+Code Smell | SQL queries should retrieve only necessary fields
+Code Smell | Sections of code should not be commented out
+Code Smell | Sets with elements that are enum values should be replaced with EnumSet
+Code Smell | Short-circuit logic should be used in boolean contexts
+Code Smell | Similar tests should be grouped in a single Parameterized test
+Code Smell | Simple class names should be used
+Code Smell | Simple string literal should be used for single line strings
+Code Smell | Single-character alternations in regular expressions should be replaced with character classes
+Code Smell | Source code should be indented consistently
+Code Smell | Spring beans should be considered by "@ComponentScan"
+Code Smell | Spring components should use constructor injection
+Code Smell | Spring's ModelAndViewAssert assertions should be used instead of other assertions
+Code Smell | Standard functional interfaces should not be redefined
+Code Smell | Standard outputs should not be used directly to log anything
+Code Smell | Statements should be on separate lines
+Code Smell | Static fields should not be updated in constructors
+Code Smell | Static non-final field names should comply with a naming convention
+Code Smell | String literals should not be duplicated
+Code Smell | String multiline concatenation should be replaced with Text Blocks
+Code Smell | String offset-based methods should be preferred for finding substrings from offsets
+Code Smell | String operations should not rely on the default system locale
+Code Smell | Strings literals should be placed on the left side when checking for equality
+Code Smell | Strings should not be concatenated using '+' in a loop
+Code Smell | Subclasses that add fields to classes that override "equals" should also override "equals"
+Code Smell | Superfluous "@ResponseBody" annotations should be removed
+Code Smell | Superfluous curly brace quantifiers should be avoided
+Code Smell | Switch arrow labels should not use redundant keywords
+Code Smell | Switch cases should end with an unconditional "break" statement
+Code Smell | Switches should be used for sequences of simple "String" tests
+Code Smell | Synchronized classes "Vector", "Hashtable", "Stack" and "StringBuffer" should not be used
+Code Smell | Synchronizing on a "Lock" object should be avoided
+Code Smell | Tabulation characters should not be used
+Code Smell | Ternary operators should not be nested
+Code Smell | Test assertions should include messages
+Code Smell | Test classes should comply with a naming convention
+Code Smell | Test methods should comply with a naming convention
+Code Smell | Test methods should not contain too many assertions
+Code Smell | TestCases should contain tests
+Code Smell | Tests should be kept in a dedicated source directory
+Code Smell | Tests should be stable
+Code Smell | Tests should include assertions
+Code Smell | Tests should use fixed data instead of randomized data
+Code Smell | Text blocks should not be used in complex expressions
+Code Smell | The "Object.finalize()" method should not be overridden
+Code Smell | The Singleton design pattern should be used with care
+Code Smell | The default unnamed package should not be used
+Code Smell | The diamond operator ("<>") should be used
+Code Smell | The members of an interface or class declaration should appear in a pre-defined order
+Code Smell | The names of methods with boolean return values should start with "is" or "has"
+Code Smell | The ternary operator should not be used
+Code Smell | The upper bound of type variables and wildcards should not be "final"
+Code Smell | Threads should not be started in constructors
+Code Smell | Throwable and Error should not be caught
+Code Smell | Track comments matching a regular expression
+Code Smell | Track lack of copyright and license headers
+Code Smell | Track uses of "@SuppressWarnings" annotations
+Code Smell | Track uses of "CHECKSTYLE:OFF" suppression comments
+Code Smell | Track uses of "FIXME" tags
+Code Smell | Track uses of "NOPMD" suppression comments
+Code Smell | Track uses of "NOSONAR" comments
+Code Smell | Track uses of "TODO" tags
+Code Smell | Track uses of disallowed classes
+Code Smell | Track uses of disallowed constructors
+Code Smell | Track uses of disallowed methods
+Code Smell | Try-catch blocks should not be nested
+Code Smell | Try-with-resources should be used
+Code Smell | Two branches in a conditional structure should not have exactly the same implementation
+Code Smell | Type parameter names should comply with a naming convention
+Code Smell | Type parameters should not shadow other type parameters
+Code Smell | Types should be used in lambdas
+Code Smell | Types used as keys in Maps should implement Comparable
+Code Smell | URIs should not be hardcoded
+Code Smell | Underscores should be used to make large numbers readable
+Code Smell | Unicode-aware versions of character classes should be preferred
+Code Smell | Unit tests should throw exceptions
+Code Smell | Unnecessary bit operations should not be performed
+Code Smell | Unnecessary imports should be removed
+Code Smell | Unnecessary semicolons should be omitted
+Code Smell | Unused "private" classes should be removed
+Code Smell | Unused "private" fields should be removed
+Code Smell | Unused "private" methods should be removed
+Code Smell | Unused assignments should be removed
+Code Smell | Unused labels should be removed
+Code Smell | Unused local variables should be removed
+Code Smell | Unused method parameters should be removed
+Code Smell | Unused type parameters should be removed
+Code Smell | Use Fused Location to optimize battery power
+Code Smell | Use Java 14 "switch" expression
+Code Smell | Use batch Processing in JDBC
+Code Smell | Use built-in "Math.clamp" methods
+Code Smell | Use record pattern instead of explicit field access
+Code Smell | Use switch instead of if-else chain to compare a variable against multiple cases
+Code Smell | Use when instead of a single if inside a pattern match body
+Code Smell | Utility classes should not have public constructors
+Code Smell | Value-based objects should not be serialized
+Code Smell | Vararg method arguments should not be confusing
+Code Smell | Variables should not be declared before they are relevant
+Code Smell | Whitespace and control characters in literals should be explicit
+Code Smell | Whitespace for text block indent should be consistent
+Code Smell | Wildcard imports should not be used
